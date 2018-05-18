@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Shoes</title>
+  </head>
+  <body>
+    <p>shoes</p>
+    {% for product in shoes  %}
+    <p>{{product.product}} {{product.seller}} {{product.date_posted}} {{product.amount}} <a href = "dashboard">Buy</a></p>
+    {% endfor %}
+    {% for sale in item_for_sale %}
+    {{sale}}
+    {% endfor %}
+    <a href="dashboard">Go to the Dashboard</a>  <a href="logoutfunc">Logout</a>
+  </body>
+</html>

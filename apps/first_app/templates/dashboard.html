@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <h2> Hi {{request.session.first_name}}</h2>
+
+    Sell your Products:
+    <form action="sell" method="POST">
+      {% csrf_token %}
+      <input type = "text" name="product" placeholder="Product">
+      Amount:<input type="text" name="amount" placeholder="Amount">
+      <input type="submit" name = "submit" value="Sell">
+    </form>
+    Your Products that haven't sold yet:
+    {% for sell in item_for_sale%}
+    {{item_for_sale.product}} {{item_for_sale.amount}} <a href="remove">Remove</a>
+    {% endfor %}
+
+    Your products that you sold:
+    <p>sold items</p>
+    Sales:
+    <p></p>
+    Purchases:
+    {% for item in p %}
+      <p>{{p}}</p>
+      {% endfor %}
+
+
+    <a href = "logoutfunc">Logout<a/>
+    <a href = "shoes">Go to all Products</a>
+  </body>
+</html>
